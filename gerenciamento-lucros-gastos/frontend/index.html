@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Lucros e Gastos</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciamento de Lucros e Gastos</h1>
+        <form id="formulario">
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" required>
+                <option value="compra">Compra</option>
+                <option value="venda">Venda</option>
+            </select>
+
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" required>
+
+            <label for="valor">Valor:</label>
+            <input type="number" id="valor" required>
+
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" required>
+
+            <button type="submit">Adicionar</button>
+        </form>
+
+        <div id="resultado">
+            <h2>Lucro Total: <span id="lucro-total">R$ 0,00</span></h2>
+            <button onclick="gerarPlanilha()">Gerar Planilha</button>
+        </div>
+
+        <div id="itens-adicionados">
+            <h3>Itens Adicionados:</h3>
+            <ul id="lista-itens"></ul>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
